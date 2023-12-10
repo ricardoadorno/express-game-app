@@ -28,7 +28,7 @@ class UsersController {
     return res.json(user);
   }
 
-  static async store(req: Request<{}, {}, typeof Users>, res: Response) {
+  static async store(req: Request, res: Response) {
     const { body } = req;
 
     try {
@@ -40,10 +40,7 @@ class UsersController {
     }
   }
 
-  static async update(
-    req: Request<{ id: string }, {}, typeof Users>,
-    res: Response
-  ) {
+  static async update(req: Request, res: Response) {
     const { id } = req.params;
     const { body } = req;
 

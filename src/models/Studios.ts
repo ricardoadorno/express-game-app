@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const studiosSchema = new mongoose.Schema(
   {
@@ -8,9 +8,9 @@ const studiosSchema = new mongoose.Schema(
     location: String,
     logo: String,
   },
-  { versionKey: false }
+  { versionKey: false },
 );
 
-const Studios = mongoose.model('studio', studiosSchema);
+const Studios = mongoose.model("studio", studiosSchema);
 
 export { Studios, studiosSchema };

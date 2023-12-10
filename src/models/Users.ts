@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const usersSchema = new mongoose.Schema(
   {
@@ -8,12 +8,12 @@ const usersSchema = new mongoose.Schema(
     password: String,
     favoriteGame: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'games',
+      ref: "games",
     },
   },
-  { versionKey: false }
+  { versionKey: false },
 );
 
-const Users = mongoose.model('users', usersSchema);
+const Users = mongoose.model("users", usersSchema);
 
 export default Users;

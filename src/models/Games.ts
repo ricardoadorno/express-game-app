@@ -1,5 +1,5 @@
-import mongoose from 'mongoose';
-import { studiosSchema } from './Studios';
+import mongoose from "mongoose";
+import { studiosSchema } from "./Studios";
 
 const gamesSchema = new mongoose.Schema(
   {
@@ -13,9 +13,9 @@ const gamesSchema = new mongoose.Schema(
     tags: [String],
     studio: studiosSchema,
   },
-  { versionKey: false }
+  { versionKey: false },
 );
 
-const Games = mongoose.model('games', gamesSchema);
+const Games = mongoose.model("games", gamesSchema);
 
 export default Games;

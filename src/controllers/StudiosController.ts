@@ -13,7 +13,7 @@ class StudiosController {
     return res.json(game);
   }
 
-  static async store(req: Request<{}, {}, typeof Studios>, res: Response) {
+  static async store(req: Request, res: Response) {
     const { body } = req;
 
     try {
@@ -25,10 +25,7 @@ class StudiosController {
     }
   }
 
-  static async update(
-    req: Request<{ id: string }, {}, typeof Studios>,
-    res: Response
-  ) {
+  static async update(req: Request, res: Response) {
     const { id } = req.params;
     const { body } = req;
 

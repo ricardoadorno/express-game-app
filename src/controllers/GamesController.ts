@@ -47,7 +47,7 @@ class GamesController {
   }
 
   static async update(
-    req: Request<{ id: string }, {}, typeof Games>,
+    req: Request<{ id: string }, typeof Games>,
     res: Response
   ) {
     const { id } = req.params;

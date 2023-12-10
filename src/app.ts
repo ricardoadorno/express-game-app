@@ -8,6 +8,6 @@ app.use(express.json());
 
 mongo();
 
-app.use('/', routes.games);
+routes(app);
 
-app.listen(3000, () => console.log('Server is running!'));
+app.listen(3000, () => console.log('Server is running! http://localhost:3000'));

@@ -1,45 +1,18 @@
 import { Router } from 'express';
-import { GamesModel } from '../models';
+import GamesController from '../controllers/GamesController';
 
 const route = Router();
 
-route.get('/', async (_, response) => {
-  await GamesModel.find({}).then((games) => {
-    return response.json(games);
-  });
-});
+route.get('/games', GamesController.index);
 
-route.get('/:id', async (request, response) => {
-  const { id } = request.params;
+route.get('/games/search', GamesController.searchByName);
 
-  await GamesModel.findById(id).then((game) => {
-    return response.json(game);
-  });
-});
+route.get('/games/:id', GamesController.show);
 
-route.post('/', async (request, response) => {
-  const { body } = request;
+route.post('/games', GamesController.store);
 
-  await GamesModel.create(body).then((game) => {
-    return response.json(game);
-  });
-});
+route.put('/games/:id', GamesController.update);
 
-route.put('/:id', async (request, response) => {
-  const { id } = request.params;
-  const { body } = request;
-
-  await GamesModel.updateOne({ _id: id }, body).then((game) => {
-    return response.json(game);
-  });
-});
-
-route.delete('/:id', async (request, response) => {
-  const { id } = request.params;
-
-  await GamesModel.deleteOne({ _id: id }).then((game) => {
-    return response.json(game);
-  });
-});
+route.delete('/games/:id', GamesController.destroy);
 
 export default route;

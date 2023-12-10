@@ -1,3 +1,5 @@
-import GamesModel from './GamesModel';
+import Games from './Games';
+import Users from './Users';
+import { Studios } from './Studios';
 
-export { GamesModel };
+export { Games, Studios, Users };
